@@ -1,8 +1,38 @@
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
-
-@objid ("d336218d-aff5-44f2-9d05-36765f1423b5")
 public class Gare extends Propriete {
-    @objid ("2efcdd8a-5ea9-4b89-b4a1-81a5296f7b39")
+
     public EtatGare etatGare;
 
+    public  Quartier quartier;
+
+    public EtatGare getEtatGare() {
+        return etatGare;
+    }
+
+    public void setEtatGare(EtatGare etatGare) {
+        this.etatGare = etatGare;
+    }
+
+    public Quartier getQuartier() {
+        return quartier;
+    }
+
+    public void setQuartier(Quartier quartier) {
+        this.quartier = quartier;
+    }
+
+    public Gare(String nom, int prix, int loyer, Quartier quartier) {
+        setNom(nom);
+        setPrix(prix);
+        setLoyer(loyer);
+        setQuartier(quartier);
+        setEtatGare(new GareLibre(this));
+    }
+
+    public void tombeSurCase(Joueur joueur) {
+        this.etatGare.tombeSurCase(joueur);
+    }
+
+    public void achatPropriete(Joueur joueur) {
+
+    }
 }

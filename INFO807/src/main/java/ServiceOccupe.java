@@ -1,5 +1,53 @@
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("e7c223a3-5e46-4d49-af48-810e5616a0ea")
 public class ServiceOccupe extends EtatService {
+    public ServiceOccupe(Service service){
+        this.service = service;
+    }
+
+    public void retireProprietaire() {
+    }
+
+    public void evalConstructible(boolean estConstructible) {
+    }
+
+    public void evalPlein() {
+    }
+
+    public boolean construireMaison() {
+    }
+
+    public void tombeSurCase(Joueur joueur) {
+        if(!verifJoueur(joueur)){
+            int res = service.getQuartier().compteMultiplicateurService(joueur);
+            int numDes = lancerDe();
+            int loyer = numDes * res * service.getLoyer();
+            if(joueur.paye(loyer)){
+                service.getJoueur().ajoutArgent(loyer);
+            }
+        }
+    }
+
+    public int achatPropriete(Joueur joueur) {
+    }
+
+    public void verifConstructible(Joueur joueur) {
+    }
+
+    public void devientConstructible() {
+    }
+
+    public void majLoyer() {
+    }
+
+    public boolean verifJoueur(Joueur joueur) {
+    }
+
+    public int compteMaison() {
+    }
+
+    public void verifPlein() {
+    }
+
+    public void devientOccupe() {
+    }
 }

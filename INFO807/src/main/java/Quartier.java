@@ -1,26 +1,66 @@
 import java.util.ArrayList;
 import java.util.List;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("2b631197-6f68-4eaf-a390-7b1dea376ea6")
+
 public class Quartier {
-    @objid ("0e05ff09-8f06-4959-8840-a8bb71a7281b")
-    public List<Propriete> propriete = new ArrayList<Propriete> ();
+    private TypeQuartier nom;
 
-    @objid ("669218cc-8b4b-48e4-8ae9-3334b2b01ebf")
-    public void majQuartier(Joueur joueur) {
+    public TypeQuartier getNom() {
+        return nom;
     }
 
-    @objid ("b9cdb09e-fbb6-4c2c-ba9a-d8e4e8c37abc")
+    public void setNom(TypeQuartier nom) {
+        this.nom = nom;
+    }
+
+    public Quartier(TypeQuartier nom){
+        this.nom = nom;
+    }
+
+    public ArrayList<Propriete> propriete = new ArrayList<Propriete> ();
+
+    public void majQuartier(Joueur joueur) {
+        int cpt = 0;
+        for(int i = 0; i < propriete.size(); i++){
+            if(propriete.get(i).getJoueur() == joueur){
+                cpt++;
+            }
+        }
+        if(cpt==(propriete.size())){
+            for(int i = 0 ; i < propriete.size() ; i++){
+                ((Terrain)propriete.get(i)).devientConstructible();
+            }
+        }else{
+            // Mettre seulement les propriétés du joueur en occupé (tkt ça va appeler l'état et si c'est déjà occupé on va pas toucher)
+            // Mais pas envie modifier mon modelio pour l'instant
+        }
+    }
+
     public boolean verifAppartenance(Joueur joueur) {
     }
 
-    @objid ("b9319a2c-5493-45a7-8f55-41a2fd9c5b38")
     public int compteMultiplicateurService(Joueur joueur) {
+        int cpt = 0;
+        for(int i = 0; i < propriete.size(); i++){
+            if(propriete.get(i).getJoueur() == joueur){
+                cpt++;
+            }
+        }
+        if(cpt==(propriete.size())){
+            return 4;
+        }else {
+            return 10;
+        }
     }
 
-    @objid ("56013f41-02ba-4b88-b94a-bf4e91f5f924")
     public int compteGare(Joueur joueur) {
+        int cpt = 0;
+        for(int i = 0; i < propriete.size(); i++){
+            if(propriete.get(i).getJoueur() == joueur){
+                cpt++;
+            }
+        }
+        return cpt;
     }
 
 }

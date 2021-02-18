@@ -1,78 +1,170 @@
 import java.util.ArrayList;
 import java.util.List;
-import com.modeliosoft.modelio.javadesigner.annotations.mdl;
-import com.modeliosoft.modelio.javadesigner.annotations.objid;
+import java.util.Scanner;
 
-@objid ("56620ce6-352c-418c-9f2c-20b414ec029c")
+
 public class Joueur {
-    @mdl.prop
-    @objid ("701b8754-9ada-451d-9e5b-6fa722e1e16b")
+
     private String pseudo;
 
-    @mdl.propgetter
+    private int argent;
+
+    private Case caseC;
+
+    public int getArgent() {
+        return argent;
+    }
+
+    public void setArgent(int argent) {
+        this.argent = argent;
+    }
+
+
+    public Joueur(String nom, Case caseC){
+        this.pseudo = nom;
+        this.argent = 500;
+        this.caseC = caseC;
+    }
+
     public String getPseudo() {
-        // Automatically generated method. Please do not modify this code.
         return this.pseudo;
     }
 
-    @mdl.propsetter
     public void setPseudo(String value) {
-        // Automatically generated method. Please do not modify this code.
         this.pseudo = value;
     }
 
-    @objid ("73007147-d622-4b97-afba-72993c6b086e")
-    public Case case;
 
-    @objid ("48f5892c-42e6-4e11-acc2-1c4ae5271c06")
+    public Case getCaseC() {
+        return caseC;
+    }
+
+    public void setCaseC(Case caseC) {
+        this.caseC = caseC;
+    }
+
+    public Partie partie;
+
     public List<Propriete> propriete = new ArrayList<Propriete> ();
 
-    @objid ("82598e26-4bbf-46d9-b0d0-4e6f2356dcbe")
     public void jouerUnTour() {
+        boolean fini = false;
+        boolean Construit = false;
+        int resDes = lancerDes();
+
+        System.out.println("vous avez obtenu : " + resDes + " en lancant les dès");
+        caseC = partie.avancer(this, caseC, resDes);
+        caseC.tombeSurCase(this);
+
+        while(!fini){
+            System.out.println("vous pouvez effectuer les actions suivantes :");
+            System.out.println("1 - visualisez les terrains constructibles");
+            System.out.println("2 - construire une maison sur un terrain");
+            System.out.println("3 - finir son tour");
+
+            Scanner scanIn = new Scanner(System.in);
+            int choix = scanIn.nextInt();
+            if(choix == 1){
+                listerConstructibles();
+            }
+            else if(choix == 2 && !Construit){
+                Scanner scanIn2 = new Scanner(System.in);
+                String nomRue = scanIn.nextLine();
+                Terrain t = verifTerrain(nomRue);
+                if(t != null){
+                    construireMaison(t);
+                    Construit = true;
+                }else{
+                    System.out.println("nom invalide");
+                }
+            }
+            else if(choix == 3){
+                fini = true;
+            }
+            else{
+                System.out.println("choix invalide");
+            }
+        }
     }
 
-    @objid ("1b1e29bb-c352-4b02-84e9-fb69beab50ef")
     public int lancerDes() {
+        return (int) (Math.random() * (12 - 2)) + 2;
     }
 
-    @objid ("e9d50812-21b7-4c75-ac5e-45492cd66ffb")
-    public void ajoutArgent(int argent) {
+    public void ajoutArgent(int argentObt) {
+        argent += argentObt;
     }
 
-    @objid ("0a47f1e5-fa6b-46e4-8c6d-f2ff3d38f6d3")
-    public void enleverArgent(int argent) {
+    public void enleverArgent(int argentObt) {
+        argent -= argentObt;
     }
 
-    @objid ("7234b8eb-024e-4236-bb72-6368a214ebab")
     public void vendrePropriete(Propriete propriete) {
     }
 
-    @objid ("b20ac459-55f0-4f5f-aca5-bae8327209b2")
     public void achatPropriete() {
+        if(caseC.getClass() == Terrain.class){
+            ((Terrain)caseC).achatPropriete(this);
+        }else if(caseC.getClass() == Service.class){
+            ((Service)caseC).achatPropriete(this);
+        }else{
+            ((Gare)caseC).achatPropriete(this);
+        }
     }
 
-    @objid ("d69dd20a-d5a0-4811-9bc1-5cca397c817e")
-    public void construireMaison(Propriete propriete) {
+    public void construireMaison(Terrain terrain) {
+        if(terrain.construireMaison()){
+            System.out.println("votre terrain  "+ terrain.getNom() + " contient "+ terrain.getNbmaisons() + " maisons");
+        }else{
+            System.out.println("construction échuée");
+        }
     }
 
-    @objid ("85860cdb-0619-49fe-8a4d-70835f1b0b2f")
-    public void finDeTour() {
-    }
 
-    @objid ("fa5872b2-51cc-46f4-835c-c491e0365473")
     public boolean verifArgent(int prixProp) {
+        if(getArgent() > prixProp){
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    @objid ("2111979b-ff21-4fa9-a994-30a9cba95daf")
-    public void ajouterArgentJoueur(int argent) {
-    }
 
-    @objid ("0de91eb9-822b-4725-94f5-72fe17ebf4c2")
     public boolean paye(int prix) {
+        if(verifArgent(prix)){
+            enleverArgent(prix);
+            return true;
+        }else{
+            System.out.println("allez travaillez bordellllll !!!!");
+            return false;
+        }
     }
 
-    @objid ("6571cbea-bc08-4366-b1c6-65d7d4469847")
     public void listerConstructibles() {
+        ArrayList<Terrain> constructible = new ArrayList<Terrain>();
+        for(int i = 0 ; i < propriete.size() ; i++){
+            if( (propriete.get(i).getClass() == Terrain.class) && ( ((Terrain)propriete.get(i)).etatTerrain.getClass() == TerrainConstructible.class)){
+                constructible.add((Terrain)propriete.get(i));
+            }
+        }
+        int i = 1;
+        for (Terrain t : constructible){
+            System.out.println("Terrain numéro " + i + ":  ");
+            System.out.print("Nom : " + t.getNom() + ", ");
+            System.out.print("Quartier : " + t.getQuartier().getNom() + ", ");
+            System.out.println("Loyer : " + t.getLoyer());
+            System.out.println("**********************************");
+
+        }
+    }
+
+    public Terrain verifTerrain(String nomRue){
+        for (Propriete p : propriete){
+            if(nomRue == p.getNom()){
+                return ((Terrain)p);
+            }
+        }
+        return null;
     }
 
 }
