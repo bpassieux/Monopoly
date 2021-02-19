@@ -3,9 +3,13 @@
 
 public class Terrain extends Propriete {
 
+    // ************************ Attributs *********************************
+
     private int nbmaisons = 0;
 
     public EtatTerrain etatTerrain;
+
+    // ************************ Getteurs/Setteurs *********************************
 
     public EtatTerrain getEtatTerrain() {
         return etatTerrain;
@@ -23,6 +27,7 @@ public class Terrain extends Propriete {
         this.nbmaisons = value;
     }
 
+    // ************************ Méthodes *********************************
 
     public Terrain(String nom, int prix, int loyer, Quartier quartier) {
         setNom(nom);
@@ -32,16 +37,19 @@ public class Terrain extends Propriete {
         this.etatTerrain = new TerrainLibre(this);
     }
 
-    public boolean construireMaison() {
-        return this.etatTerrain.construireMaison();
-    }
-
+    /*
     public void evalConstructible(boolean estConstructible) {
         //this.etatTerrain.evalConstructible();
     }
 
     public void evalPlein() {
         this.etatTerrain.evalPlein();
+    }
+    */
+
+
+    public boolean construireMaison() {
+        return this.etatTerrain.construireMaison();
     }
 
     public void devientConstructible() {
@@ -52,13 +60,25 @@ public class Terrain extends Propriete {
         this.etatTerrain.devientOccupe();
     }
 
+
+    @Override
     public void tombeSurCase(Joueur joueur){
         etatTerrain.tombeSurCase(joueur);
     }
 
+    @Override
+    public void retireProprietaire() {
+        etatTerrain.retireProprietaire();
+    }
 
+    @Override
     public void achatPropriete(Joueur joueur) {
         etatTerrain.achatPropriete(joueur);
+    }
+
+    @Override
+    public void majLoyer() {
+        etatTerrain.majLoyer();
     }
 
 

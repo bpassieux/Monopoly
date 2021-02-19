@@ -19,11 +19,23 @@ public class Service extends Propriete {
         this.etatService = new ServiceLibre(this);
     }
 
-    public void tombeSurCase() {
+    @Override
+    public void tombeSurCase(Joueur joueur) {
+        etatService.tombeSurCase(joueur);
     }
 
+    @Override
+    public void retireProprietaire() {
+        etatService.retireProprietaire();
+    }
 
+    @Override
     public void achatPropriete(Joueur joueur) {
         etatService.achatPropriete(joueur);
+    }
+
+    @Override
+    public void majLoyer() {
+        etatService.majLoyer();
     }
 }

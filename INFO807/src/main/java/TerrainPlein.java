@@ -5,18 +5,16 @@ public class TerrainPlein extends EtatTerrain {
         this.terrain = terrain;
     }
 
+    @Override
     public void retireProprietaire() {
     }
 
-    public void evalConstructible(boolean estConstructible) {
-    }
-
-    public void evalPlein() {
-    }
-
+    @Override
     public boolean construireMaison() {
+        return false;
     }
 
+    @Override
     public void tombeSurCase(Joueur joueur) {
         if(!verifJoueur(joueur)){
             int maisons = compteMaison();
@@ -26,27 +24,37 @@ public class TerrainPlein extends EtatTerrain {
         }
     }
 
-    public int achatPropriete(Joueur joueur) {
+    @Override
+    public void achatPropriete(Joueur joueur) {
     }
 
+    @Override
     public void verifConstructible(Joueur joueur) {
     }
 
+    @Override
     public void devientConstructible() {
     }
 
+    @Override
     public void majLoyer() {
     }
 
+    @Override
     public boolean verifJoueur(Joueur joueur) {
+        return terrain.getJoueur().equals(joueur);
     }
 
+    @Override
     public int compteMaison() {
+        return terrain.getNbmaisons();
     }
 
+    @Override
     public void verifPlein() {
     }
 
+    @Override
     public void devientOccupe() {
     }
 }

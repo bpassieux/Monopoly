@@ -2,22 +2,22 @@ import java.util.Scanner;
 
 public class TerrainLibre extends EtatTerrain {
 
+    public Terrain terrain;
+
     public TerrainLibre(Terrain terrain){
         this.terrain = terrain;
     }
 
+    @Override
     public void retireProprietaire() {
     }
 
-    public void evalConstructible(boolean estConstructible) {
-    }
-
-    public void evalPlein() {
-    }
-
+    @Override
     public boolean construireMaison() {
+        return false;
     }
 
+    @Override
     public void tombeSurCase(Joueur joueur) {
         boolean fini = false;
         System.out.println("le terrain :" + terrain.getNom() + " est libre");
@@ -43,34 +43,45 @@ public class TerrainLibre extends EtatTerrain {
         }
     }
 
-    public int achatPropriete(Joueur joueur) {
+    @Override
+    public void achatPropriete(Joueur joueur) {
         if(joueur.paye(terrain.getPrix())){
             terrain.setJoueur(joueur);
             terrain.setEtatTerrain(new TerrainOccupe(terrain));
             terrain.etatTerrain.verifConstructible(joueur);
+            System.out.println("terrain :" + terrain.getNom() + " acheté");
         }else{
-
+            System.out.println("allez bossez bordel !!! , pas assez d'argent");
         }
     }
 
+    @Override
     public void verifConstructible(Joueur joueur) {
     }
 
+    @Override
     public void devientConstructible() {
     }
 
+    @Override
     public void majLoyer() {
     }
 
+    @Override
     public boolean verifJoueur(Joueur joueur) {
+        return true;
     }
 
+    @Override
     public int compteMaison() {
+        return terrain.getNbmaisons();
     }
 
+    @Override
     public void verifPlein() {
     }
 
+    @Override
     public void devientOccupe() {
     }
 }

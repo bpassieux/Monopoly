@@ -171,9 +171,11 @@ public class Plateau {
     }
 
     public boolean verifQuartier(Propriete propriete, Joueur joueur) {
+        return false;
     }
 
     public int vendrePropriete(Propriete propriete) {
+        return 0;
     }
 
     /*depart

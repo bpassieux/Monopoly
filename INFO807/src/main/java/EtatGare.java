@@ -1,11 +1,14 @@
 
-public class EtatGare {
+public abstract class EtatGare {
     public Gare gare;
 
-    public void tombeSurCase(Joueur joueur) {
-    }
+    public abstract void tombeSurCase(Joueur joueur);
 
-    public boolean verifJoueur(Joueur joueur) {
-    }
+    public abstract boolean verifJoueur(Joueur joueur);
 
+    public abstract void achatPropriete(Joueur joueur);
+
+    public abstract void retireProprietaire();
+
+    public abstract void majLoyer();
 }

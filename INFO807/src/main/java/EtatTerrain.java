@@ -2,43 +2,30 @@
 public abstract class EtatTerrain {
     public Terrain terrain;
 
-    public void retireProprietaire() {
-    }
+    public abstract void retireProprietaire();
+    /*
+    public abstract void evalConstructible(boolean estConstructible);
 
-    public void evalConstructible(boolean estConstructible) {
-    }
+    public abstract void evalPlein();
+    */
+    public abstract boolean construireMaison();
 
-    public void evalPlein() {
-    }
+    public abstract void tombeSurCase(Joueur joueur);
 
-    public boolean construireMaison() {
-    }
+    public abstract void achatPropriete(Joueur joueur);
 
-    public void tombeSurCase(Joueur joueur) {
-    }
+    public abstract void verifConstructible(Joueur joueur);
 
-    public int achatPropriete(Joueur joueur) {
-    }
+    public abstract void devientConstructible();
 
-    public void verifConstructible(Joueur joueur) {
-    }
+    public abstract void majLoyer();
 
-    public void devientConstructible() {
-    }
+    public abstract boolean verifJoueur(Joueur joueur);
 
-    public void majLoyer() {
-    }
+    public abstract int compteMaison();
 
-    public boolean verifJoueur(Joueur joueur) {
-    }
+    public abstract void verifPlein();
 
-    public int compteMaison() {
-    }
-
-    public void verifPlein() {
-    }
-
-    public void devientOccupe() {
-    }
+    public abstract void devientOccupe();
 
 }

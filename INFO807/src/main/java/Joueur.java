@@ -11,6 +11,10 @@ public class Joueur {
 
     private Case caseC;
 
+    public Partie partie;
+
+    public List<Propriete> propriete = new ArrayList<Propriete> ();
+
     public int getArgent() {
         return argent;
     }
@@ -43,9 +47,7 @@ public class Joueur {
         this.caseC = caseC;
     }
 
-    public Partie partie;
 
-    public List<Propriete> propriete = new ArrayList<Propriete> ();
 
     public void jouerUnTour() {
         boolean fini = false;
@@ -60,7 +62,8 @@ public class Joueur {
             System.out.println("vous pouvez effectuer les actions suivantes :");
             System.out.println("1 - visualisez les terrains constructibles");
             System.out.println("2 - construire une maison sur un terrain");
-            System.out.println("3 - finir son tour");
+            System.out.println("3 - visualisez mon compte");
+            System.out.println("4 - finir son tour");
 
             Scanner scanIn = new Scanner(System.in);
             int choix = scanIn.nextInt();
@@ -77,8 +80,10 @@ public class Joueur {
                 }else{
                     System.out.println("nom invalide");
                 }
+            }else if(choix == 3){
+                System.out.println("mon compte contient :" + this.argent);
             }
-            else if(choix == 3){
+            else if(choix == 4){
                 fini = true;
             }
             else{

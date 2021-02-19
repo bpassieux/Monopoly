@@ -20,6 +20,12 @@ public class Quartier {
     public ArrayList<Propriete> propriete = new ArrayList<Propriete> ();
 
     public void majQuartier(Joueur joueur) {
+        for(int i = 0 ; i < propriete.size() ; i++){
+            ((Terrain)propriete.get(i)).devientConstructible();
+        }
+    }
+
+    public boolean verifAppartenance(Joueur joueur) {
         int cpt = 0;
         for(int i = 0; i < propriete.size(); i++){
             if(propriete.get(i).getJoueur() == joueur){
@@ -27,16 +33,10 @@ public class Quartier {
             }
         }
         if(cpt==(propriete.size())){
-            for(int i = 0 ; i < propriete.size() ; i++){
-                ((Terrain)propriete.get(i)).devientConstructible();
-            }
+            return true;
         }else{
-            // Mettre seulement les propriétés du joueur en occupé (tkt ça va appeler l'état et si c'est déjà occupé on va pas toucher)
-            // Mais pas envie modifier mon modelio pour l'instant
+            return false;
         }
-    }
-
-    public boolean verifAppartenance(Joueur joueur) {
     }
 
     public int compteMultiplicateurService(Joueur joueur) {

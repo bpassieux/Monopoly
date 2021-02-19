@@ -5,7 +5,7 @@ public class Depart extends Case {
         setNom("depart");
     }
 
-    public void tombeSurCase() {
+    @Override
+    public void tombeSurCase(Joueur joueur) {
     }
-
 }

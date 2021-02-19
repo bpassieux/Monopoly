@@ -4,18 +4,7 @@ public class ServiceOccupe extends EtatService {
         this.service = service;
     }
 
-    public void retireProprietaire() {
-    }
-
-    public void evalConstructible(boolean estConstructible) {
-    }
-
-    public void evalPlein() {
-    }
-
-    public boolean construireMaison() {
-    }
-
+    @Override
     public void tombeSurCase(Joueur joueur) {
         if(!verifJoueur(joueur)){
             int res = service.getQuartier().compteMultiplicateurService(joueur);
@@ -27,27 +16,26 @@ public class ServiceOccupe extends EtatService {
         }
     }
 
-    public int achatPropriete(Joueur joueur) {
+    @Override
+    public void achatPropriete(Joueur joueur) {
     }
 
-    public void verifConstructible(Joueur joueur) {
+    @Override
+    public boolean verifJoueur(Joueur joueur) {
+        return service.getJoueur().equals(joueur);
     }
 
-    public void devientConstructible() {
+    @Override
+    public int lancerDe() {
+        return (int) (Math.random() * (12 - 2)) + 2;
     }
 
+    @Override
     public void majLoyer() {
     }
 
-    public boolean verifJoueur(Joueur joueur) {
+    @Override
+    public void retireProprietaire() {
     }
 
-    public int compteMaison() {
-    }
-
-    public void verifPlein() {
-    }
-
-    public void devientOccupe() {
-    }
 }

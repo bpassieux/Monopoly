@@ -10,8 +10,8 @@ public abstract class Case {
         return nom;
     }
 
-    public void tombeSurCase(Joueur joueur) {
-    }
+
+    public abstract void tombeSurCase(Joueur joueur);
 
 
 

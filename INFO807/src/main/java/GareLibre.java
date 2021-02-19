@@ -7,6 +7,7 @@ public class GareLibre extends EtatGare {
         this.gare = gare;
     }
 
+    @Override
     public void tombeSurCase(Joueur joueur) {
         boolean fini = false;
         System.out.println("le terrain :" + gare.getNom() + " est libre");
@@ -32,15 +33,25 @@ public class GareLibre extends EtatGare {
         }
     }
 
+    @Override
     public void achatPropriete(Joueur joueur) {
         if(joueur.paye(gare.getPrix())){
             gare.setJoueur(joueur);
             gare.setEtatGare(new GareOccupee(gare));
         }else{
-
+            System.out.println("allez bosser bordel, pas assez d'argent !!!!!!");
         }
     }
 
+    @Override
+    public void retireProprietaire() {
+    }
+
+    @Override
+    public void majLoyer() {
+    }
+
+    @Override
     public boolean verifJoueur(Joueur joueur) {
         return true;
     }

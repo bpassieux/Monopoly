@@ -9,15 +9,7 @@ public class ServiceLibre extends EtatService {
     public void retireProprietaire() {
     }
 
-    public void evalConstructible(boolean estConstructible) {
-    }
-
-    public void evalPlein() {
-    }
-
-    public boolean construireMaison() {
-    }
-
+    @Override
     public void tombeSurCase(Joueur joueur) {
         boolean fini = false;
         System.out.println("le service :" + service.getNom() + " est libre");
@@ -44,6 +36,17 @@ public class ServiceLibre extends EtatService {
         }
     }
 
+    @Override
+    public boolean verifJoueur(Joueur joueur) {
+        return true;
+    }
+
+    @Override
+    public int lancerDe() {
+        return 0;
+    }
+
+    @Override
     public void achatPropriete(Joueur joueur) {
         if(joueur.paye(service.getPrix())){
             service.setJoueur(joueur);
@@ -51,25 +54,8 @@ public class ServiceLibre extends EtatService {
         }
     }
 
-    public void verifConstructible(Joueur joueur) {
-    }
-
-    public void devientConstructible() {
-    }
-
+    @Override
     public void majLoyer() {
-    }
-
-    public boolean verifJoueur(Joueur joueur) {
-    }
-
-    public int compteMaison() {
-    }
-
-    public void verifPlein() {
-    }
-
-    public void devientOccupe() {
     }
 }
 

@@ -8,4 +8,9 @@ public class Taxe extends Case {
 
     public void tombeSurCase() {
     }
+
+    @Override
+    public void tombeSurCase(Joueur joueur) {
+
+    }
 }

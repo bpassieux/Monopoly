@@ -28,13 +28,16 @@ public class Menu {
                     System.out.print("écrivez le nom du joueur svp : ");
                     Scanner scanIn = new Scanner(System.in);
                     String nom = scanIn.nextLine();
-                    Joueur j = new Joueur(nom, plateau.getPlateau().get(0));
-                    j.partie = partie;
-                    partie.joueur.add(j);
-                    System.out.println("le joueur " + j + " a été créé et ajouté dans la partie");
+                    if(partie.ajouterJoueur(nom)){
+                        System.out.println("le joueur " + nom + " a été créé et ajouté dans la partie");
+                    }
                     break;
                 case 2:
-                    finiInit = true;
+                    if (partie.joueur.size()>2){
+                        finiInit = true;
+                    }else{
+                        System.out.println("Pas assez de joueurs");
+                    }
                     break;
                 default:
                     System.out.println("choix invalide ");
@@ -45,37 +48,8 @@ public class Menu {
 
     public static void main(String args[])
     {
-        boolean fini = false;
         Partie partie = initPartie();
-        int i = 0;
-        int nb_joueurs = partie.joueur.size();
-        while (!fini){
-            partie.joueur.get( i % nb_joueurs).jouerUnTour();
-            i++;
-            if (i > 5){
-                fini = true;
-            }
-        }
-
-       /* while( !fini ){
-            switch(recupeChoix()) {
-                case 1:
-                    // code block
-                    break;
-                case 2:
-                    // code block
-                    break;
-                case 8952156430.1:
-                    gagner();
-                    fini = true;
-                default:
-                    // code block
-            }
-        }*/
-
-
-
+        partie.lancementPartie();
     }
-
 
 }

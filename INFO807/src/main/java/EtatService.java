@@ -2,16 +2,15 @@
 public abstract class EtatService {
     public Service service;
 
-    public void tombeSurCase(Joueur joueur) {
-    }
+    public abstract void tombeSurCase(Joueur joueur);
 
-    public boolean verifJoueur(Joueur joueur) {
-    }
+    public abstract boolean verifJoueur(Joueur joueur);
 
-    public int lancerDe() {
-    }
+    public abstract int lancerDe();
 
-    public void achatPropriete(Joueur joueur){
+    public abstract void achatPropriete(Joueur joueur);
 
-    }
+    public abstract void majLoyer();
+
+    public abstract void retireProprietaire();
 }

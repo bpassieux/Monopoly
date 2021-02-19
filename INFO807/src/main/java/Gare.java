@@ -28,11 +28,23 @@ public class Gare extends Propriete {
         setEtatGare(new GareLibre(this));
     }
 
+    @Override
     public void tombeSurCase(Joueur joueur) {
         this.etatGare.tombeSurCase(joueur);
     }
 
-    public void achatPropriete(Joueur joueur) {
+    @Override
+    public void retireProprietaire() {
+        etatGare.retireProprietaire();
 
+    }
+    @Override
+    public void achatPropriete(Joueur joueur) {
+        etatGare.achatPropriete(joueur);
+    }
+
+    @Override
+    public void majLoyer() {
+        etatGare.majLoyer();
     }
 }
