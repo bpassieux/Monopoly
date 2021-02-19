@@ -28,10 +28,13 @@ public class Quartier {
     public boolean verifAppartenance(Joueur joueur) {
         int cpt = 0;
         for(int i = 0; i < propriete.size(); i++){
-            if(propriete.get(i).getJoueur() == joueur){
-                cpt++;
+            if(propriete.get(i).getJoueur() != null) {
+                if (propriete.get(i).getJoueur().equals(joueur)) {
+                    cpt++;
+                }
             }
         }
+        System.out.println("le joueur a " + cpt + " propriétés dans le quartier " + this.getNom());
         if(cpt==(propriete.size())){
             return true;
         }else{

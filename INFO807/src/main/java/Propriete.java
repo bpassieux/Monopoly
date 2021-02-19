@@ -1,6 +1,6 @@
 public abstract class Propriete extends Case {
     //********************* attributs *****************************
-    private Joueur joueur = null;
+    private Joueur joueur;
 
     private Quartier quartier;
 

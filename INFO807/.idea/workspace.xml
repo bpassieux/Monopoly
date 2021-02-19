@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f42a83ed-518b-492a-b503-190d20284456" name="Default Changelist" comment="code sans errors, reste à tester !">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GareLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GareLibre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GareOccupee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GareOccupee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Partie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceLibre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Propriete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Propriete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Quartier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Quartier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ServiceOccupe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceOccupe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TerrainConstructible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TerrainConstructible.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TerrainLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TerrainLibre.java" afterDir="false" />
@@ -53,13 +52,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Menu" />
-      <module name="Monopoly" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -69,6 +61,13 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Menu" />
+      <module name="Monopoly" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,5 +128,27 @@
     <MESSAGE value="Hoey les hoeys !" />
     <MESSAGE value="code sans errors, reste à tester !" />
     <option name="LAST_COMMIT_MESSAGE" value="code sans errors, reste à tester !" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1613747225073">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1613747225073" />
+    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1613747225073">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1613747225073" />
+    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1613747225072">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1613747225072" />
+    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1613747225073">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1613747225073" />
+    <state x="535" y="179" width="672" height="678" key="search.everywhere.popup" timestamp="1613746293051">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="535" y="179" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1613746293051" />
   </component>
 </project>

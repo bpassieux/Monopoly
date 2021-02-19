@@ -42,17 +42,6 @@ public class Plateau {
         Quartier service = new Quartier(TypeQuartier.Service);
         Quartier gare = new Quartier(TypeQuartier.Gare);
 
-        quartiers.add(rouge);
-        quartiers.add(vert);
-        quartiers.add(bleu);
-        quartiers.add(bleuClair);
-        quartiers.add(orange);
-        quartiers.add(marron);
-        quartiers.add(rose);
-        quartiers.add(jaune);
-        quartiers.add(service);
-        quartiers.add(gare);
-
         //case depart
         Depart depart = new Depart();
 
@@ -90,7 +79,7 @@ public class Plateau {
         Terrain boulevardDeLaVillette = new Terrain("boulevardDeLaVillette",140,10, rose);
         Terrain avenueDeNeuilly = new Terrain("avenueDeNeuilly",140,10, rose);
         Terrain rueDeParadis = new Terrain("rueDeParadis",160,12, rose);
-        Terrain avenueMozart = new Terrain("avenueMozart",180,14, rose);
+        Terrain avenueMozart = new Terrain("avenueMozart",180,14, orange);
         Terrain boulevardSaintMichel = new Terrain("boulevardSaintMichel",180,14, orange);
         Terrain placePigaille = new Terrain("placePigaille",200,16, orange);
         Terrain avenueMatignon = new Terrain("avenueMatignon",220,18, rouge);
@@ -104,6 +93,55 @@ public class Plateau {
         Terrain boulevardDesCapucines = new Terrain("boulevardDesCapucines",320,28, vert);
         Terrain avenueDesChampsElysees = new Terrain("avenueDesChampsElysees",350,35, bleu);
         Terrain rueDeLaPaix = new Terrain("rueDeLaPaix",400,50, bleu);
+
+        marron.propriete.add(boulevardDeBelleville);
+        marron.propriete.add(rueLecourbe);
+
+        bleuClair.propriete.add(rueDeVaugirard);
+        bleuClair.propriete.add(rueDeCourcelles);
+        bleuClair.propriete.add(avenueDeLaRepublique);
+
+        rose.propriete.add(boulevardDeLaVillette);
+        rose.propriete.add(avenueDeNeuilly);
+        rose.propriete.add(rueDeParadis);
+
+        orange.propriete.add(avenueMozart);
+        orange.propriete.add(boulevardSaintMichel);
+        orange.propriete.add(placePigaille);
+
+        rouge.propriete.add(avenueHenriMartin);
+        rouge.propriete.add(boulevardMalesherbes);
+        rouge.propriete.add(avenueMatignon);
+
+        jaune.propriete.add(placeDeLaBourse);
+        jaune.propriete.add(faubourgSaintHonore);
+        jaune.propriete.add(rueDeLaFayette);
+
+        vert.propriete.add(avenueDeBreteuil);
+        vert.propriete.add(avenueFoch);
+        vert.propriete.add(boulevardDesCapucines);
+
+        bleu.propriete.add(avenueDesChampsElysees);
+        bleu.propriete.add(rueDeLaPaix);
+        
+        gare.propriete.add(gareMontparnasse);
+        gare.propriete.add(gareDeLyon);
+        gare.propriete.add(gareDuNord);
+        gare.propriete.add(gareSaintLazare);
+
+        service.propriete.add(compagnieDeDistributionDElectricite);
+        service.propriete.add(compagnieDeDistributionDesEaux);
+
+        quartiers.add(rouge);
+        quartiers.add(vert);
+        quartiers.add(bleu);
+        quartiers.add(bleuClair);
+        quartiers.add(orange);
+        quartiers.add(marron);
+        quartiers.add(rose);
+        quartiers.add(jaune);
+        quartiers.add(service);
+        quartiers.add(gare);
 
         plateau.add(depart);
         plateau.add(boulevardDeBelleville);
@@ -157,7 +195,7 @@ public class Plateau {
                 int index = plateau.indexOf(c);
                 int indexArrivee = (index + distance) % 40;
                 arrivee = plateau.get(indexArrivee);
-                System.out.println("vous êtes arrivé sur la case : " + arrivee.getNom());
+                System.out.println("vous êtes arrivé sur la case : " + arrivee.getNom() );
                 if(verifPassageDepart(joueur,courant,arrivee)){
                     System.out.println("vous êtes passé pas la case départ, vous gagnez 200 !!!");
                 }

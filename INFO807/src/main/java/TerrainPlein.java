@@ -16,6 +16,7 @@ public class TerrainPlein extends EtatTerrain {
 
     @Override
     public void tombeSurCase(Joueur joueur) {
+        System.out.println("le terrain appartient au quartier : " + terrain.getQuartier().getNom());
         if(!verifJoueur(joueur)){
             int maisons = compteMaison();
             int loyer = terrain.getLoyer() + (maisons * 50);

@@ -26,7 +26,7 @@ public class Joueur {
 
     public Joueur(String nom, Case caseC){
         this.pseudo = nom;
-        this.argent = 500;
+        this.argent = 500000;
         this.caseC = caseC;
     }
 
@@ -72,7 +72,7 @@ public class Joueur {
                 listerConstructibles();
             }
             else if(choix == 2 && !Construit){
-                System.out.print("écrivez le nom di terrain sur lequel vous voulez construir votre maison : ");
+                System.out.print("écrivez le nom du terrain sur lequel vous voulez construire votre maison : ");
                 Scanner scanIn2 = new Scanner(System.in);
                 String nomRue = scanIn2.nextLine();
                 Terrain t = verifTerrain(nomRue);
@@ -123,7 +123,7 @@ public class Joueur {
         if(terrain.construireMaison()){
             System.out.println("votre terrain  "+ terrain.getNom() + " contient "+ terrain.getNbmaisons() + " maisons");
         }else{
-            System.out.println("construction échuée");
+            System.out.println("construction échouée");
         }
     }
 
@@ -150,7 +150,7 @@ public class Joueur {
     public void listerConstructibles() {
         ArrayList<Terrain> constructible = new ArrayList<Terrain>();
         for(int i = 0 ; i < propriete.size() ; i++){
-            if( (propriete.get(i).getClass() == Terrain.class) && ( ((Terrain)propriete.get(i)).etatTerrain.getClass() == TerrainConstructible.class)){
+            if( (propriete.get(i) instanceof Terrain) && ( ((Terrain)propriete.get(i)).etatTerrain instanceof TerrainConstructible)){
                 constructible.add((Terrain)propriete.get(i));
             }
         }

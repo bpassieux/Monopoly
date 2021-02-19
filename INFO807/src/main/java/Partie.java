@@ -13,7 +13,7 @@ public class Partie {
         while (!fini){
             joueur.get( i % nb_joueurs).jouerUnTour();
             i++;
-            if (i > 5){
+            if (i > 10000){
                 fini = true;
             }
         }

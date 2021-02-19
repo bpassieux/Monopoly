@@ -21,6 +21,7 @@ public class TerrainLibre extends EtatTerrain {
     public void tombeSurCase(Joueur joueur) {
         boolean fini = false;
         System.out.println("le terrain :" + terrain.getNom() + " est libre");
+        System.out.println("le terrain appartient au quartier : " + terrain.getQuartier().getNom());
         while(!fini){
             System.out.println("le prix :" + terrain.getPrix());
             System.out.println("le loyer :" + terrain.getLoyer());
