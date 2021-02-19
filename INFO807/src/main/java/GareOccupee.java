@@ -8,9 +8,10 @@ public class GareOccupee extends EtatGare {
     @Override
     public void tombeSurCase(Joueur joueur) {
         if(!verifJoueur(joueur)){
-            int cpt = this.gare.getLoyer() * this.gare.quartier.compteGare(gare.getJoueur());
-            joueur.paye( cpt );
-            gare.getJoueur().ajoutArgent( cpt );
+            int loyer = this.gare.getLoyer() * this.gare.quartier.compteGare(gare.getJoueur());
+            joueur.paye( loyer );
+            gare.getJoueur().ajoutArgent( loyer );
+            System.out.println("vous avez payé " + loyer + " à " + gare.getJoueur().getPseudo() + " car vous êtes sur son terrain" );
         }
     }
 

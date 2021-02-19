@@ -33,7 +33,7 @@ public class Partie {
     public boolean verifierInitiationJoueur(String nom) {
         boolean res = true;
         for (Joueur j : joueur) {
-            if (j.getPseudo() == nom){
+            if (j.getPseudo().matches(nom)){
                 System.out.println("le nom est déjà utilisé par un autre joueur");
                 res = false;
             }

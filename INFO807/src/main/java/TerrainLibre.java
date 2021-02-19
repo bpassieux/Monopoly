@@ -21,12 +21,12 @@ public class TerrainLibre extends EtatTerrain {
     public void tombeSurCase(Joueur joueur) {
         boolean fini = false;
         System.out.println("le terrain :" + terrain.getNom() + " est libre");
-        System.out.println("le prix :" + terrain.getPrix());
-        System.out.println("le loyer :" + terrain.getLoyer());
-        System.out.println("vous avez " + joueur.getArgent() + " sur votre compte");
-        System.out.println("voulez vous l'acheter ? ");
-        System.out.println("1 - oui ");
         while(!fini){
+            System.out.println("le prix :" + terrain.getPrix());
+            System.out.println("le loyer :" + terrain.getLoyer());
+            System.out.println("vous avez " + joueur.getArgent() + " sur votre compte");
+            System.out.println("voulez vous l'acheter ? ");
+            System.out.println("1 - oui ");
             System.out.println("2 - non");
             Scanner scanIn = new Scanner(System.in);
             int choix = scanIn.nextInt();
@@ -47,9 +47,10 @@ public class TerrainLibre extends EtatTerrain {
     public void achatPropriete(Joueur joueur) {
         if(joueur.paye(terrain.getPrix())){
             terrain.setJoueur(joueur);
+            joueur.propriete.add(terrain);
             terrain.setEtatTerrain(new TerrainOccupe(terrain));
             terrain.etatTerrain.verifConstructible(joueur);
-            System.out.println("terrain :" + terrain.getNom() + " acheté");
+            System.out.println("le joueur " + joueur.getPseudo() + " a acheté " + terrain.getNom());
         }else{
             System.out.println("allez bossez bordel !!! , pas assez d'argent");
         }

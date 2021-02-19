@@ -10,14 +10,14 @@ public class GareLibre extends EtatGare {
     @Override
     public void tombeSurCase(Joueur joueur) {
         boolean fini = false;
-        System.out.println("le terrain :" + gare.getNom() + " est libre");
-        System.out.println("le prix :" + gare.getPrix());
-        System.out.println("le loyer :" + gare.getLoyer());
-        System.out.println("vous avez " + joueur.getArgent() + " sur votre compte");
-        System.out.println("voulez vous l'acheter ? ");
-        System.out.println("1 - oui ");
-        System.out.println("2 - non");
         while(!fini){
+            System.out.println("le terrain :" + gare.getNom() + " est libre");
+            System.out.println("le prix :" + gare.getPrix());
+            System.out.println("le loyer :" + gare.getLoyer());
+            System.out.println("vous avez " + joueur.getArgent() + " sur votre compte");
+            System.out.println("voulez vous l'acheter ? ");
+            System.out.println("1 - oui ");
+            System.out.println("2 - non");
             Scanner scanIn = new Scanner(System.in);
             int choix = scanIn.nextInt();
             if(choix == 1){
@@ -37,7 +37,9 @@ public class GareLibre extends EtatGare {
     public void achatPropriete(Joueur joueur) {
         if(joueur.paye(gare.getPrix())){
             gare.setJoueur(joueur);
+            joueur.propriete.add(gare);
             gare.setEtatGare(new GareOccupee(gare));
+            System.out.println("le joueur " + joueur.getPseudo() + " a acheté " + gare.getNom());
         }else{
             System.out.println("allez bosser bordel, pas assez d'argent !!!!!!");
         }

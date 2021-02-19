@@ -54,6 +54,7 @@ public class Joueur {
         boolean Construit = false;
         int resDes = lancerDes();
 
+        System.out.println("c'est au joueur :" + this.getPseudo() + " de jouer");
         System.out.println("vous avez obtenu : " + resDes + " en lancant les dès");
         caseC = partie.avancer(this, caseC, resDes);
         caseC.tombeSurCase(this);
@@ -71,8 +72,9 @@ public class Joueur {
                 listerConstructibles();
             }
             else if(choix == 2 && !Construit){
+                System.out.print("écrivez le nom di terrain sur lequel vous voulez construir votre maison : ");
                 Scanner scanIn2 = new Scanner(System.in);
-                String nomRue = scanIn.nextLine();
+                String nomRue = scanIn2.nextLine();
                 Terrain t = verifTerrain(nomRue);
                 if(t != null){
                     construireMaison(t);
@@ -165,7 +167,7 @@ public class Joueur {
 
     public Terrain verifTerrain(String nomRue){
         for (Propriete p : propriete){
-            if(nomRue == p.getNom()){
+            if(p.getNom().matches(nomRue)){
                 return ((Terrain)p);
             }
         }

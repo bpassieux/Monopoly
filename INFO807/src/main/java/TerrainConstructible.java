@@ -23,6 +23,7 @@ public class TerrainConstructible extends EtatTerrain {
             int loyer = terrain.getLoyer() + (maisons * 50);
             joueur.paye(loyer);
             terrain.getJoueur().ajoutArgent(loyer);
+            System.out.println("vous avez payé " + loyer + " à " + terrain.getJoueur().getPseudo() + " car vous êtes sur son terrain" );
         }
     }
 

@@ -12,6 +12,7 @@ public class ServiceOccupe extends EtatService {
             int loyer = numDes * res * service.getLoyer();
             if(joueur.paye(loyer)){
                 service.getJoueur().ajoutArgent(loyer);
+                System.out.println("vous avez payé " + loyer + " à " + service.getJoueur().getPseudo() + " car vous êtes sur son terrain" );
             }
         }
     }

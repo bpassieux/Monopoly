@@ -68,7 +68,11 @@ public class Plateau {
 
         //les cases inutiles
         Taxe caisseDeCommunaute = new Taxe("caisseDeCommunaute", 0);
+        Taxe caisseDeCommunaute2 = new Taxe("caisseDeCommunaute", 0);
+        Taxe caisseDeCommunaute3 = new Taxe("caisseDeCommunaute", 0);
         Taxe chance = new Taxe("chance", 0);
+        Taxe chance2 = new Taxe("chance", 0);
+        Taxe chance3 = new Taxe("chance", 0);
         Taxe prison = new Taxe("prison", 0);
         Taxe parcGratuit = new Taxe("parcGratuit", 0);
         Taxe allezEnPrison = new Taxe("allezEnPrison", 0);
@@ -118,12 +122,12 @@ public class Plateau {
         plateau.add(rueDeParadis);
         plateau.add(gareDeLyon);
         plateau.add(avenueMozart);
-        plateau.add(caisseDeCommunaute);
+        plateau.add(caisseDeCommunaute2);
         plateau.add(boulevardSaintMichel);
         plateau.add(placePigaille);
         plateau.add(parcGratuit);
         plateau.add(avenueMatignon);
-        plateau.add(chance);
+        plateau.add(chance2);
         plateau.add(boulevardMalesherbes);
         plateau.add(avenueHenriMartin);
         plateau.add(gareDuNord);
@@ -134,10 +138,10 @@ public class Plateau {
         plateau.add(allezEnPrison);
         plateau.add(avenueDeBreteuil);
         plateau.add(avenueFoch);
-        plateau.add(caisseDeCommunaute);
+        plateau.add(caisseDeCommunaute3);
         plateau.add(boulevardDesCapucines);
         plateau.add(gareSaintLazare);
-        plateau.add(chance);
+        plateau.add(chance3);
         plateau.add(avenueDesChampsElysees);
         plateau.add(luxe);
         plateau.add(rueDeLaPaix);
