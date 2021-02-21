@@ -14,8 +14,7 @@ public class Plateau {
     public void setQuartiers(ArrayList<Quartier> quartiers) {
         this.quartiers = quartiers;
     }
-
-
+    
 
     public ArrayList<Case> getPlateau() {
         return plateau;
