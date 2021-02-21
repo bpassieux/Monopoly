@@ -7,7 +7,8 @@
     <list default="true" id="f42a83ed-518b-492a-b503-190d20284456" name="Default Changelist" comment="code sans errors, reste à tester !">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Taxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Taxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Plateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Taxe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Taxe.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,17 +52,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Menu" />
@@ -81,7 +71,8 @@
       <workItem from="1613575991008" duration="626000" />
       <workItem from="1613634790981" duration="31933000" />
       <workItem from="1613720561955" duration="14607000" />
-      <workItem from="1613914386516" duration="1127000" />
+      <workItem from="1613914386516" duration="1606000" />
+      <workItem from="1613916368940" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="Hoey les hoeys !">
       <created>1613669516782</created>

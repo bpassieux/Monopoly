@@ -14,7 +14,7 @@ public class Plateau {
     public void setQuartiers(ArrayList<Quartier> quartiers) {
         this.quartiers = quartiers;
     }
-    
+
 
     public ArrayList<Case> getPlateau() {
         return plateau;
@@ -209,14 +209,6 @@ public class Plateau {
             return true;
         }
         return false;
-    }
-
-    public boolean verifQuartier(Propriete propriete, Joueur joueur) {
-        return false;
-    }
-
-    public int vendrePropriete(Propriete propriete) {
-        return 0;
     }
 
     /*depart
